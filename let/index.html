@@ -4,13 +4,13 @@
 <head>
 	<style type="text/css">
 		section>div {
-			height: 100px;
-			width: 100px;
 			background-color: #ccc;
 			float: left;
 			margin: 3px;
 			cursor: pointer;
 			border-radius: 7px;
+			padding: 20px;
+			text-align: center;
 		}
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
@@ -18,7 +18,7 @@
 		//creating a for loop that will create 45 divs.
 		for(let i= 0; i<45; i++){ //we changed var to Let so now every i is unique not overwritten
 			var div = document.createElement('div');
-			div.innerHTML += `box + ${i}`;
+			div.innerHTML += `box ${i}`;
 			div.onclick = function() {
 				alert("you clicked on a box #" + i); // the value of i will be # number (1 to 45)
 			};
