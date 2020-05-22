@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<style type="text/css">
+<head>
+	<style type="text/css">
 		section>div {
 			height: 100px;
 			width: 100px;
@@ -13,13 +13,12 @@
 			border-radius: 7px;
 		}
 	</style>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
-		<script type="text/babel">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script type="text/babel">
 		//creating a for loop that will create 45 divs.
 		for(let i= 0; i<45; i++){ //we changed var to Let so now every i is unique not overwritten
 			var div = document.createElement('div');
-			div.innerHTML += `'box' + ${i}`;
+			div.innerHTML += `box + ${i}`;
 			div.onclick = function() {
 				alert("you clicked on a box #" + i); // the value of i will be # number (1 to 45)
 			};
@@ -28,15 +27,15 @@
 		}
 
 	</script>
-		<title>Let Keyword example</title>
-	</head>
+	<title>Let Keyword example</title>
+</head>
 
-	<body>
-		<header>
-			<h1>Let Keyword example:</h1>
-			<h2>Click on a box. Let gives us block scope control.</h2>
-		</header>
-		<section></section>
-	</body>
+<body>
+	<header>
+		<h1>Let Keyword example:</h1>
+		<h2>Click on a box. Let gives us block scope control.</h2>
+	</header>
+	<section></section>
+</body>
 
 </html>
