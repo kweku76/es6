@@ -22,7 +22,12 @@
 </head>
 
 <body>
-	<h3> strings allow us to create strings that are longer and cleaner with more dynamic content in them</h3>
+	<h3>Template strings allow us to create strings that are longer and cleaner with more dynamic content in them</h3>
+	<p>`Hi ${firstName}, Thanks for buying from us!
+		Total: $${purchasePrice}
+		Shipping: $${shipping}
+		Grand Total: $${purchasePrice + shipping}; //adding price and shipping to give a total
+		`</p>
 </body>
 
 </html>
