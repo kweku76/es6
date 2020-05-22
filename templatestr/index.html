@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
-		function createEmail(firstName, purchasePrice) {
+		function createEmail(firstName, purchasePrice) { //firstName and purhasePrice are the arguments of the function createEmail
 			var shipping = 5.95;
 			console.log(
 				`Hi ${firstName}, Thanks for buying from us!
 					Total: $${purchasePrice}
 					Shipping: $${shipping}
-					Grand Total: $${purchasePrice + shipping};
+					Grand Total: $${purchasePrice + shipping}; //adding price and shipping to give a total
 				`	
 				);
 		}
 
-		createEmail("Gina", 100);
+		createEmail("David", 100);
 
 	</script>
 	<title>Template Strings</title>
 </head>
+
 <body>
-</body>	
+	<h3> strings allow us to create strings that are longer and cleaner with more dynamic content in them</h3>
+</body>
+
 </html>
