@@ -10,14 +10,16 @@
 			float: left;
 			margin: 3px;
 			cursor: pointer;
+			border-radius: 7px;
 		}
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
+		//creating a for loop that will create 45 divs.
 		for(let i= 0; i<45; i++){ //we changed var to Let so now every i is unique not overwritten
 			var div = document.createElement('div');
 			div.onclick = function() {
-				alert("you clicked on a box #" + i);
+				alert("you clicked on a box #" + i); // the value of i will be # number (1 to 45)
 			};
 			document.getElementsByTagName('section')[0].appendChild(div);
 		}
@@ -28,8 +30,8 @@
 
 <body>
 	<header>
-		<h1>Let Keyword example</h1>
-		<h2>Click on a box</h2>
+		<h1>Let Keyword example:</h1>
+		<h2>Click on a box. Let gives us block scope control.</h2>
 	</header>
 	<section></section>
 </body>
