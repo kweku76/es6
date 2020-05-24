@@ -5,19 +5,32 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 
 	<title>Default Parameters</title>
+	<style type="text/css">
+		.hex {
+			font-size: 3rem;
+			transition: all 0.8s ease;
+			color: #431c8a;
+		}
+	</style>
 </head>
 
 <body>
-	<p id="demo">Setting default values in functions. inspect console</p>
+	<h1>Default Parameters</h1>
+	<p class="hex"></p>
+	<p>the default parameter for the 'haveFun' function is set to <br>
+		function haveFun(activityName="hiking", time=3) <br>
+		if you remove the function declaration you will see the default above.</p>
 
 
 	<script type="text/babel">
 		function haveFun(activityName="hiking", time=3) {
-		
+			const hex = document.querySelector('.hex');  
 			console.log(`Today I will go ${activityName} for ${time} hours.`)
+			hex.innerHTML = `Today I will go ${activityName} for ${time} hours.`;
+			
 		}
 	haveFun("biking", 5);
-		
+
 	</script>
 </body>
 
