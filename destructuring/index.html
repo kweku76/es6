@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+	<style type="text/css">
+		.hex {
+			font-size: 3rem;
+			transition: all 0.8s ease;
+			color: #431c8a;
+		}
+	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
 	<script type="text/babel">
-		
+		const hex = document.querySelector('.hex'); 
 		var vacation = {
 			destination: "Chile",
 			travelers: 2,
@@ -11,15 +19,20 @@
 			cost: 4000
 		};
 
-		function vacationMarketing({destination, activity}) {
-			return `Come to ${destination} and do some ${activity}`
+		function vacationMarketing({destination, activity, cost}) {
+			
+			return `Come to ${destination} and do some ${activity} at only $${cost}!`
 		}
 
 		console.log(vacationMarketing(vacation));
-
+		hex.innerHTML = `${vacationMarketing(vacation)}`;
 	</script>
 	<title>Destructuring Assignment</title>
 </head>
+
 <body>
-</body>	
+	<h1>Destructuring Assignment</h1>
+	<p class="hex"></p>
+</body>
+
 </html>
