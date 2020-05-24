@@ -3,27 +3,24 @@
 
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
-	<script type="text/babel">
 
-		var studentList = students => console.log(students);
-		
-
-		studentList(["Joe", "Cindy", "Jeanne"]);
-
-		
-	
-	</script>
 	<title>Arrow Functions</title>
+
 </head>
 
 <body>
-	<h1>Arrow Functions</h1>
-	<p id="list">
-		var studentList = students => console.log(students);
 
-		<br>
-		studentList(["Joe", "Cindy", "Jeanne"]);
-	</p>
+	<p>This example shows an Arrow Function with a parameter.</p>
+
+	<p id="demo"></p>
+
+	<script>
+		var hello;
+
+		hello = (val) => "Hello " + val;
+
+		document.getElementById("demo").innerHTML = hello("Universe!");
+	</script>
 </body>
 
 </html>

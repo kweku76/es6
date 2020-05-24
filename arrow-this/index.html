@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
-	<script type="text/babel">
-		
+
+<body>
+
+	<h2>The JavaScript <i>this</i> Keyword</h2>
+
+	<p>In this example, <b>this</b> represents the <b>person</b> object.</p>
+	<p>Because the person object "owns" the fullName method.</p>
+
+	<p id="demo"></p>
+
+	<script>
+		// Create an object:
 		var person = {
-			first: "Doug",
-			actions: ['bike', 'hike', 'ski', 'surf'],
-			printActions() {
-				this.actions.forEach(action => {
-					var str = this.first + " likes to " + action;
-					console.log(str);
-				});
+			firstName: "John",
+			lastName: "Doe",
+			id: 5566,
+			fullName: function () {
+				return this.firstName + " " + this.lastName;
 			}
 		};
-		person.printActions();
 
-	
+		// Display data from the object:
+		document.getElementById("demo").innerHTML = person.fullName();
 	</script>
-	<title>Arrow Functions and 'this'</title>
-</head>
-<body>
-</body>	
+
+</body>
+
 </html>
