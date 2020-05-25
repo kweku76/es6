@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style type="text/css">
+		.hex {
+			font-size: 3rem;
+			transition: all 0.8s ease;
+			color: #431c8a;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script type="text/babel">
+		var hex = document.querySelector('.hex'); 
+		class Vehicle {
+			constructor(description, wheels) {//creating properties for the constructor function
+				this.description = description;
+				this.wheels = wheels;
+			}
+			describeYourself() {//creating method inside class
+				console.log(`I am a ${this.description} with ${this.wheels} wheels`);
+				hex.innerHTML = `I am a ${this.description} with ${this.wheels} wheels`;
+			}
+		}
+		let coolSkiVan = new Vehicle("cool ski van", 4);//creating an instance of Vehicle class
+		let lambagini = new Vehicle("streamline shiny body red", 4);
+
+		coolSkiVan.describeYourself();//instantiating the varaible wit the method
+		lambagini.describeYourself();
+	</script>
+	<title>Classes</title>
+</head>
+
+<body>
+	<h1>Classes</h1>
+	<p class="hex"></p>
+</body>
+
+</html>
