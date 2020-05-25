@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script type="text/babel">
+		let hex = document.querySelector('.hex'); 
+		class Vehicle {
+			constructor(description, wheels) {//creating properties for the constructor function
+				this.description = description;
+				this.wheels = wheels;
+			}
+			describeYourself() {//creating method inside class
+				console.log(`I am a ${this.description} with ${this.wheels} wheels`);
+				
+			}
+		}
+		var coolSkiVan = new Vehicle("cool ski van", 4);//creating an instance of Vehicle class
+
+		coolSkiVan.describeYourself();//instantiating the varaible wit the method
+	
+		class SemiTruck extends Vehicle {
+			constructor() {
+				super("semi truck", 18)// we use super to refer back to the vehicle class to extend its properties.
+			}
+		}
+
+		var groceryStoreSemi = new SemiTruck();//creating new variable but using same method as before
+		groceryStoreSemi.describeYourself();
+
+
+
+
+
+
+	</script>
+	<title>Classes</title>
+</head>
+
+<body>
+	<h1>Class Inheritance</h1>
+	<h3>Extending the class</h3>
+	<p class="hex"></p>
+</body>
+
+</html>

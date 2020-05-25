@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script type="text/babel">
+
+		var attendance = {
+			_list: [], //creating a property call list set to an empty array
+			set addName(name) { //a Setter is a method that SETS the value of s specific property
+				this._list.push(name);//this method will push a name into the empty _list array
+			},
+			get list(){ //list will join the elements of the list array
+//a Getter is a method that GETS the value of s specific property
+				return this._list.join(',');
+			}
+
+		};
+		attendance.addName = 'Joanne';
+		console.log("List getter:", attendance.list);
+		console.log("Underscore list (prop)", attendance._list);
+		attendance.addName = 'Freddy';
+		attendance.addName = 'Harpo';
+	</script>
+	<title>Classes</title>
+</head>
+
+<body>
+	<h1>Classes: Getters and Setters</h1>
+</body>
+
+</html>
