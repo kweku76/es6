@@ -69,10 +69,37 @@ function Person(name, age) { //this is an object created using a function constr
 
 Person.prototype.speak = function () {
   console.log(`hi my name is ${this.name} and I am ${this.age} years old`);
+  document.getElementById('example6').innerText = (`hi my name is ${this.name} and I am ${this.age} years old`);
 }; // this is the prototype method which we have created based on the object below.
 
 
-const bill = new Person('Bill', 50); //created an object based on function constructor above
+const fred = new Person('fred', 50); //created an object based on function constructor above
 //whenever invoking the function of an object you must declare the 'NEW' operator
 
-bill.speak();
+fred.speak();
+
+class Person1 { //createing a new person class with a constructor
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  greeting() { //this is a method inside the constructor
+    return `Hello there ${this.firstName} ${this.lastName}`;
+  }
+}
+class Customer extends Person1 { // this is a sub-class of Person1
+  constructor(firstName, lastName, phone, member) { //adding more values
+    super(firstName, lastName); // we use super to call the Person1 constructor
+
+    this.phone = phone;
+    this.member = member; //we do this for the 2 new values
+  }
+  id() { //this is a method inside the constructor
+    return `Name: ${this.firstName} ${this.lastName} - Phone: ${this.phone} - Membership: ${this.member}`;
+  }
+}
+const Alfred = new Customer('Alfred', 'Jones', '555-555', 'Gold'); //we instatiate customer
+console.log(Alfred.id());
+document.getElementById('example7').innerText = (Alfred.id());
+console.log(Alfred.greeting());
+document.getElementById('example8').innerText = (Alfred.greeting());

@@ -1,108 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title></title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet">
-    <style>
-      body{
-        font-family: 'Roboto', sans-serif;
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    p code {
+      color: #3175da;
+      background: rgb(235, 235, 235);
+      display: block;
+      padding: 20px;
+      font-weight: bold;
+      max-width: 600px;
+      border-radius: 6px;
+    }
+
+    .bold {
+      font-weight: bold;
+      color: green;
+      border: 1px solid #75ce86;
+      padding: 20px;
+
+    }
+
+    h2 {
+      color: #838be8;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="text-align: right; color:blue;">ES6 EXAMPLES:</h1>
+  <hr>
+  <h1>ES6 ARROW FUNCTIONS</h1>
+  <h2>MAP</h2>
+  <p> <code>const integers = [1, 2, 3];
+      <br>
+      const updatedIntegers = integers.map((number) => {
+      <br> return number += 9
+      });</code></p>
+  <p>Output of js:</p>
+  <p id="example" class="bold"></p>
+  <p>this
+    returns
+    the result of 10, 11, 12 since we added the updated of 9 to the original
+    numbers</p>
+  <hr>
+  <h2>REPLACE NUMBERS WITH STRINGS</h2>
+  <p> <code>const integers2 = [1,2,3];
+      <br>
+      const updatedIntegers2 = integers2.map(() => "bob");
+      });</code></p>
+  <p>Output of js:</p>
+  <p id="example2" class="bold"></p>
+  <p>this
+    changes
+    the result of updatedIntegers to ["bob " , "bob " , "bob "] replacing the
+    numbers
+    with 3 strings</p>
+  <hr>
+
+  <h2>FILTERING ADULT AGE</h2>
+  <p> <code>
+      const ages = [23, 42, 6, 18];
+      <br>const adults = ages.filter(function (age) {
+      <br> return age > 20;
+      });
+      <br>
+      console.log(adults);
+    </code></p>
+  <p>Output of js:</p>
+  <p id="example3" class="bold"></p>
+  <p>result [23,42] - ES6 version gives us the same result. const adults =
+    ages.filter((age) => {
+    <br> even shorter way is: const adults = ages.filter((age) => age > 20 );
+    (implicit way)
+  </p>
+  <hr>
+
+  <h1>ES6 TEMPLATE STRINGS LITERALS</h1>
+  <p> <code>
+      const name = "Bill";<br>
+      const age = 35;
+      <br>
+      const sentence = `My name is ${name} and I am ${age * 3} years old`;<br>
+      console.log(sentence);
+    </code></p>
+  <p>Output of js:</p>
+  <p id="example4" class="bold"></p>
+  <p>much cleaner way than old concatenation method
+  </p>
+  <hr>
+  <h1>ES6 PROTOTYPE METHODS</h1>
+  <h2>CONSTRUCTOR METHOD</h2>
+  <p> <code>
+      function Person(name, age) { <br>
+      this.name = name;<br>
+      this.age = age;<br>
+      };<br>
+
+      const bill = new Person('Billy', 50);<br>
+      console.log(bill);
+    </code></p>
+  <p>Output of js:</p>
+  <p id="example5" class="bold"></p>
+  <p>whenever invoking the function of an object you must declare the 'NEW'
+    operator
+  </p>
+  <hr>
+  <h2>ADDING METHOD TO OBJECT</h2>
+  <p> <code>
+      function Person(name, age) { <br>
+      this.name = name; <br>
+      this.age = age; <br>
+      };<br>
+      Person.prototype.speak = function () {<br>
+      console.log(`hi my name is ${this.name} and I am ${this.age} years old`);<br>
+      document.getElementById('example6').innerText = (`hi my name is ${this.name} and I am ${this.age} years old`);<br>
+      };
+
+      <br>
+      const fred = new Person('fred', 50); <br>
+
+      fred.speak();
+    </code></p>
+  <p>Output of js:</p>
+  <p id="example6" class="bold"></p>
+  <p>
+    we added the speak() method to our constructor object
+  </p>
+  <hr>
+  <h1>ES6 CLASSES & EXTENDED CLASSES</h1>
+
+  <p> <code>
+      class Person1 { <br>
+      constructor(firstName, lastName) {<br>
+      this.firstName = firstName;<br>
+      this.lastName = lastName;<br>
+      }<br>
+      greeting() { <br>
+      return `Hello there ${this.firstName} ${this.lastName}`;<br>
+      }<br>
+      }<br>
+      class Customer extends Person1 { <br>
+      constructor(firstName, lastName, phone, member) { <br>
+      super(firstName, lastName); <br>
+
+      this.phone = phone;<br>
+      this.member = member; <br>
+      }<br>
+      id() { <br>
+      return `Name: ${this.firstName} ${this.lastName} - Phone: ${this.phone} - Membership: ${this.member}`;<br>
       }
-      p code{
-        color:#3175da;
-        background:rgb(235, 235, 235);
-        display:block;
-        padding:20px;
-        font-weight: bold;
-        max-width: 600px;
-        border-radius:6px;
       }
-      .bold{
-        font-weight: bold;
-        color: green;
-        border: 1px solid #75ce86;
-        padding: 20px;
+      <br>
+      console.log(Alfred.id());<br>
+      console.log(Alfred.greeting());
 
-      }
-      h2{
-        color: #838be8;
-      }
-      
-    </style>
-  </head>
-  <body>
-    <h1 style="text-align: right; color:blue;">ES6 EXAMPLES:</h1>
-    <hr>
-    <h1>ES6 ARROW FUNCTIONS</h1>
-    <h2>MAP</h2>
-    <p> <code>const integers = [1, 2, 3];
-        <br>
-        const updatedIntegers = integers.map((number) => {
-        <br> return number += 9
-        });</code></p> <p>Output of js:</p><p id="example" class="bold"></p><p>this
-      returns
-      the result of 10, 11, 12 since we added the updated of 9 to the original
-      numbers</p>
-    <hr>
-    <h2>REPLACE NUMBERS WITH STRINGS</h2>
-    <p> <code>const integers2 = [1,2,3];
-        <br>
-        const updatedIntegers2 = integers2.map(() => "bob");
-        });</code></p> <p>Output of js:</p><p id="example2" class="bold"></p><p>this
-      changes
-      the result of updatedIntegers to ["bob " , "bob " , "bob "] replacing the
-      numbers
-      with 3 strings</p>
-    <hr>
+    </code></p>
+  <p>Output of js:</p>
+  <p id="example7" class="bold"></p>
+  <p id="example8" class="bold"></p>
+  <p>We created a class Person1 with an extended class Customer and creating methods which we can use in the extended
+    class.</p>
+  <hr>
 
-    <h2>FILTERING ADULT AGE</h2>
-    <p> <code>
-        const ages = [23, 42, 6, 18];
-        <br>const adults = ages.filter(function (age) {
-        <br> return age > 20;
-        });
-        <br>
-        console.log(adults);
-      </code></p> <p>Output of js:</p><p id="example3" class="bold"></p>
-    <p>result [23,42] - ES6 version gives us the same result. const adults =
-      ages.filter((age) => {
-      <br> even shorter way is: const adults = ages.filter((age) => age > 20 );
-      (implicit way)
-    </p>
-    <hr>
-
-    <h1>ES6 TEMPLATE STRINGS LITERALS</h1>
-    <p> <code>
-        const name = "Bill";<br>
-        const age = 35;
-        <br>
-        const sentence = `My name is ${name} and I am ${age * 3} years old`;<br>
-        console.log(sentence);
-      </code></p> <p>Output of js:</p><p id="example4" class="bold"></p>
-    <p>much cleaner way than old concatenation method
-    </p>
-    <hr>
-    <h1>ES6 PROTOTYPE METHODS</h1>
-    <h2>CONSTRUCTOR METHOD</h2>
-    <p> <code>
-        function Person(name, age) { <br>
-        this.name = name;<br>
-        this.age = age;
-        };
-
-        const bill = new Person('Bill', 50);
-        console.log(bill);
-      </code></p> <p>Output of js:</p>
-    <p id="example5" class="bold"></p>
-    <p>whenever invoking the function of an object you must declare the 'NEW'
-      operator
-    </p>
-    <hr>
-
-
-    <script src="app.js">
+  <script src="app.js">
   </script>
-  </body>
+</body>
+
 </html>
