@@ -43,24 +43,24 @@ console.log(person1, person2, person3);
 
 // Object Destructuring
 
-const person = {
-  name: 'John Doe',
-  age: 32,
-  city: 'Miami',
-  gender: 'Male',
-  sayHello: function () {
-    console.log('Hello');
-  }
-}
+//const person = {
+//name: 'John Doe',
+//age: 32,
+//city: 'Miami',
+//gender: 'Male',
+//sayHello: function () {
+//console.log('Hello');
+//}
+//}
 
 // New ES6 Destructuring
 const {
-  name,
-  age,
-  city,
+  name1,
+  age1,
+  city1,
   sayHello
 } = person;
 
-console.log(name, age, city);
+console.log(name1, age1, city1);
 document.getElementById('example9').innerText = (Alfred.id());
 sayHello();
